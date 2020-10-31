@@ -1,5 +1,8 @@
 <div class="personasContainer" *ngIf="personas">
   <h2>PhoneBook</h2>
-  <app-persona *ngFor="let persona of personas" [persona]="persona">
+  <h3>Filtra contactos por nombre o comuna</h3>
+  <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+    placeholder="Escribe acá el texto a buscar" autofocus>
+  <app-persona *ngFor="let persona of personas | appFilter: searchText" [persona]="persona">
   </app-persona>
 </div>

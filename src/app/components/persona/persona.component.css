@@ -1,6 +1,6 @@
 .personaContainer{
   display: flex;
-  margin: 0 auto;
+  margin: 2% auto;
   width: 90%;
   padding:1%;
   box-sizing: border-box;
@@ -10,9 +10,11 @@
 }
 
 .personaTitle{
+  width:15em;
   background-color: rgb(230, 227, 227);
   box-shadow: 0 2px 3px rgb(116, 115, 115);
   padding:5.5% 3% 3% 3%;
+
 
 }
 

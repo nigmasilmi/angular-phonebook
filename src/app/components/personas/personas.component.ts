@@ -14,6 +14,7 @@ import { validatePhone } from '../../helpers/phoneValidator';
 export class PersonasComponent implements OnInit {
   personas: Persona[];
   showUI = false;
+  searchText = '';
 
   constructor(private personaDataService: PersonaDataService) { }
 

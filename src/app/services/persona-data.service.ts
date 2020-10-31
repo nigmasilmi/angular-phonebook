@@ -13,7 +13,6 @@ export class PersonaDataService {
 
   getPersonas(): Observable<Persona[]> {
     return this.http.get<Persona[]>('https://private-anon-48e86d01d8-testphonebook.apiary-mock.com/persona');
-    // return this.http.get<Persona[]>(this.personasEndpoint);
   }
 
 
