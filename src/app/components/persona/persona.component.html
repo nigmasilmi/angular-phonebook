@@ -1,0 +1,26 @@
+<div (click)="showPersonaDetail()" [ngClass]="setActiveClasses()">
+  <div class="personaTitle">
+    <h3>{{persona.nombre}} {{persona.apellido}}</h3>
+  </div>
+
+  <div class="infoCardBlock">
+    <h4 class="personaPhone"> Teléfono</h4>
+    <p>{{persona.telefono}}</p>
+  </div>
+
+  <div class="infoCardBlock">
+    <h4>RUT</h4>
+    <p>{{persona.rut}}</p>
+  </div>
+
+  <div class="infoCardBlock">
+    <h4>Dirección</h4>
+    <p>{{persona.direccion.calle}} {{persona.direccion.numero}}</p>
+  </div>
+
+  <div class="infoCardBlock">
+    <h4>Comuna</h4>
+    <p style="text-decoration: overline;">{{persona.direccion.comuna.nombre}}</p>
+  </div>
+
+</div>
