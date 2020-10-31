@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../models/Persona';
 import { PersonaDataService } from '../../services/persona-data.service';
+import { validateRut } from '../../helpers/rutValidator';
+import { validatePhone } from '../../helpers/phoneValidator';
+
 
 
 @Component({
@@ -10,6 +13,7 @@ import { PersonaDataService } from '../../services/persona-data.service';
 })
 export class PersonasComponent implements OnInit {
   personas: Persona[];
+  showUI = false;
 
   constructor(private personaDataService: PersonaDataService) { }
 
@@ -17,12 +21,22 @@ export class PersonasComponent implements OnInit {
     this.personaDataService.getPersonas()
       .subscribe(personas => {
         this.personas = personas;
+        this.showUI = true;
+        this.startValidation();
+
       });
   }
 
-  // temporary to check the rut validator
-
-  testRuts() {
-    this.personas.forEach(persona => this.personaDataService.validateRut(persona));
+  startValidation() {
+    this.personas.forEach(persona => {
+      if (validateRut(persona)) {
+        persona.validRut = true;
+      }
+      if (validatePhone(persona)) {
+        persona.validPhone = true;
+      }
+    });
   }
+
+
 }

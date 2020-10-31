@@ -39,7 +39,7 @@ export const validateRut = (persona: Persona): boolean => {
     calcVerDigit = '0';
   }
   if (verifCommander === 10) {
-    calcVerDigit = 'K';
+    calcVerDigit = 'k';
   }
 
   if (verifCommander !== 10 && verifCommander !== 11) {

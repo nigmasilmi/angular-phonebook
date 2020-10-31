@@ -1,5 +1,5 @@
-<div class="personasContainer">
+<div class="personasContainer" *ngIf="personas">
+  <h2>PhoneBook</h2>
   <app-persona *ngFor="let persona of personas" [persona]="persona">
   </app-persona>
-  <div (click)="testRuts()">Test Ruts</div>
 </div>

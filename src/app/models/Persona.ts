@@ -13,4 +13,6 @@ export class Persona {
     };
   };
   activo: number;
+  validRut?: boolean;
+  validPhone?: boolean;
 }

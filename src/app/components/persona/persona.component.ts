@@ -30,4 +30,12 @@ export class PersonaComponent implements OnInit {
     console.log('you clicked on persona');
   }
 
+  setInvalidRutClass() {
+    const classes = {
+      infoCardBlock: true,
+      invalidRut: !this.persona.validRut
+    };
+    return classes;
+  }
+
 }

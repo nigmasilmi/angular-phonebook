@@ -6,21 +6,28 @@
   <div class="infoCardBlock">
     <h4 class="personaPhone"> Teléfono</h4>
     <p>{{persona.telefono}}</p>
+    <small style="color: red;" *ngIf="!this.persona.validPhone"> Teléfono inválido </small>
+
   </div>
 
-  <div class="infoCardBlock">
+  <div [ngClass]="setInvalidRutClass()">
     <h4>RUT</h4>
     <p>{{persona.rut}}</p>
+    <small *ngIf="!this.persona.validRut"> Rut inválido </small>
   </div>
 
   <div class="infoCardBlock">
     <h4>Dirección</h4>
     <p>{{persona.direccion.calle}} {{persona.direccion.numero}}</p>
+
   </div>
 
   <div class="infoCardBlock">
     <h4>Comuna</h4>
     <p style="text-decoration: overline;">{{persona.direccion.comuna.nombre}}</p>
   </div>
+  <small style="color: red; margin-top: 17%; margin-left: -7%;" *ngIf="persona.activo !== 1">
+    Usuario inactivo
+  </small>
 
 </div>
