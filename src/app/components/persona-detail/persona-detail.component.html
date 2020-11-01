@@ -1,0 +1,23 @@
+<div (click)="hideDetail()" class="close">X</div>
+
+<div class="modal-header">
+  <h3>{{thePerson.nombre}} {{thePerson.apellido}}</h3>
+</div>
+
+<div>
+  <h4 class="thePersonPhone"> Teléfono</h4>
+  <p>{{thePerson.telefono}}</p>
+  <small style="color: red;" *ngIf="!this.thePerson.validPhone"> Teléfono inválido </small>
+
+</div>
+
+<div>
+  <h4>RUT</h4>
+  <p>{{thePerson.rut}}</p>
+  <small *ngIf="!this.thePerson.validRut"> Rut inválido </small>
+</div>
+
+<div>
+  <h4>Dirección</h4>
+  <p>{{thePerson.direccion.calle}} {{thePerson.direccion.numero}}</p>
+</div>

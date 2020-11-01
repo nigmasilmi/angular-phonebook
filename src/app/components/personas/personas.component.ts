@@ -3,6 +3,7 @@ import { Persona } from '../../models/Persona';
 import { PersonaDataService } from '../../services/persona-data.service';
 import { validateRut } from '../../helpers/rutValidator';
 import { validatePhone } from '../../helpers/phoneValidator';
+import { fixString } from '../../helpers/fixBadFormatting';
 
 
 
@@ -14,7 +15,9 @@ import { validatePhone } from '../../helpers/phoneValidator';
 export class PersonasComponent implements OnInit {
   personas: Persona[];
   showUI = false;
+  showAppDetail = false;
   searchText = '';
+  personOfInterest: Persona;
 
   constructor(private personaDataService: PersonaDataService) { }
 
@@ -36,8 +39,22 @@ export class PersonasComponent implements OnInit {
       if (validatePhone(persona)) {
         persona.validPhone = true;
       }
+      // console.log('persona.direccion.comuna.nombre', persona.direccion.comuna.nombre);
+      // console.log('fixString(persona.direccion.comuna.nombre)', fixString(persona.direccion.comuna.nombre));
     });
   }
+  showThisContactDetail(personaComing) {
+    this.showAppDetail = true;
+    this.personOfInterest = personaComing;
+    console.log(personaComing);
+    console.log(this.showAppDetail);
 
+  }
+
+  hideModal(hideIt: boolean) {
+    console.log(hideIt);
+    this.showAppDetail = false;
+    console.log(this.showAppDetail);
+  }
 
 }

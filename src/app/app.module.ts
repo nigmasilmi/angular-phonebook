@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonasComponent } from './components/personas/personas.component';
 import { PersonaComponent } from './components/persona/persona.component';
+import { PersonaDetailComponent } from './components/persona-detail/persona-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonasComponent,
     PersonaComponent,
-    FilterPipe
+    FilterPipe,
+    PersonaDetailComponent
   ],
   imports: [
     BrowserModule,

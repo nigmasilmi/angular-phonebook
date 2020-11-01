@@ -1,0 +1,14 @@
+:host(){
+  position: fixed;
+  top: 10%;
+  left: 3%;
+  background-color: rgba(27, 27, 27, 0.9);
+  width: 93%;
+  z-index: 100;
+  color: white;
+}
+
+.close{
+  color: white;
+  padding: 3%;
+}
